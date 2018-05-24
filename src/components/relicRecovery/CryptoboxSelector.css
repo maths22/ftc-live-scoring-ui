@@ -1,0 +1,18 @@
+.cryptobox-box {
+    height: 2.5em;
+    width: 2.5em;
+    border: 1px solid black;
+}
+
+.cryptobox-state-brown {
+    background: #302724
+}
+
+.cryptobox-state-gray {
+    background: #969C9A
+}
+
+.cryptobox-label {
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,13 @@
+/* Hide HTML5 Up and Down arrows. */
+.counter > input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.counter > input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.counter > .btnGrpClass {
+    margin-left: 0.5em;
+}
