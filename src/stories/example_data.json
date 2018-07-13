@@ -1,0 +1,183 @@
+{
+  "red_alliance": [
+    {
+      "number": 5495,
+      "noShow": false,
+      "yellowCard": false,
+      "redCard": false,
+      "participating": true
+    },
+    {
+      "number": 13496,
+      "noShow": false,
+      "yellowCard": false,
+      "redCard": false,
+      "participating": true
+    }
+  ],
+  "red_score": {
+    "submitted": false,
+    "finalized": false,
+    "autoSubmitted": false,
+    "auto": {
+      "r1Pos": null,
+      "r2Pos": null,
+      "jewel1Remaining": null,
+      "jewel2Remaining": null,
+      "cryptobox1State": [
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ]
+      ],
+      "cryptobox2State": [
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ]
+      ],
+      "cryptobox3State": [
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ]
+      ]
+    },
+    "teleop": {
+      "cryptobox1State": [
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ]
+      ],
+      "cryptobox2State": [
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ]
+      ],
+      "cryptobox3State": [
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ],
+        [
+          "EMPTY",
+          "EMPTY",
+          "EMPTY"
+        ]
+      ]
+    },
+    "endgame": {
+      "r1Pos": null,
+      "r2Pos": null,
+      "relic1State": {
+        "position": null,
+        "orientation": null
+      },
+      "relic2State": {
+        "position": null,
+        "orientation": null
+      },
+      "relic3State": {
+        "position": null,
+        "orientation": null
+      }
+    },
+    "penalties": {
+      "minor": 0,
+      "major": 0
+    }
+  }
+}

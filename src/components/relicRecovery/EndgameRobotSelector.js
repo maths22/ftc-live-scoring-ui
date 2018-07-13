@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { ButtonGroup, Button } from "react-bootstrap";
 
-export type EndgamePosition = "balanced" | "unbalanced";
+export type EndgamePosition = "balanced" | "unbalanced" |  "middle_balanced";
 
 type EndgameRobotProps = {
     position: ?EndgamePosition,
@@ -20,6 +20,7 @@ class EndgameRobotSelector extends Component<EndgameRobotProps> {
             <ButtonGroup className="btnGrpClass">
                 <Button active={this.props.position === "unbalanced"} onClick={() => this.props.onChange("unbalanced")}>Not Balanced</Button>
                 <Button active={this.props.position === "balanced"} onClick={() => this.props.onChange("balanced")}>Balanced</Button>
+              <Button active={this.props.position === "middle_balanced"} onClick={() => this.props.onChange("middle_balanced")}>Middle Balanced</Button>
             </ButtonGroup>
         );
     }

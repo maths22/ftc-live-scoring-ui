@@ -25,7 +25,7 @@ class Counter extends Component<CounterProps, CounterState> {
     constructor(props: CounterProps) {
         super(props);
         this.state = {
-            value: props.value.toString(),
+            value: props.value ? props.value.toString() : "0",
         };
     }
 
@@ -74,8 +74,8 @@ class Counter extends Component<CounterProps, CounterState> {
                     max={this.props.max}
                 />
                 <ButtonGroup className="btnGrpClass">
-                    <Button onClick={this.clickMinus}>-</Button>
-                    <Button onClick={this.clickPlus}>+</Button>
+                    <Button style={{minWidth: "3em"}} onClick={this.clickMinus}>-</Button>
+                    <Button style={{minWidth: "3em"}} onClick={this.clickPlus}>+</Button>
                 </ButtonGroup>
             </span>
         );

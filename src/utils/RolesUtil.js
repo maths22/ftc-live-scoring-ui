@@ -1,6 +1,6 @@
 //@flow
 
-import type {PanelRole, PanelsConfig} from "../types/Config";
+import type {PanelRole, PanelsConfig} from "../data/Config";
 
 export default {
     toDisplay(role : PanelRole) : string {

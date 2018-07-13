@@ -5,7 +5,7 @@ import {Grid, Row, Col, Button, FormControl} from "react-bootstrap";
 import defaults from "lodash/defaults";
 import Counter from "../../widgets/Counter";
 import RolesUtil from "../../utils/RolesUtil";
-import type {PanelRole, PanelsConfig} from "../../types/Config";
+import type {PanelRole, PanelsConfig} from "../../data/Config";
 
 type Match = {
     number: String,
@@ -34,7 +34,7 @@ class Header extends Component<HeaderProps> {
 
     render() {
         const showMatchChange = RolesUtil.canChangeMatch(this.props.role, this.props.config);
-        const matchLabel = this.props.selectedMatch ? this.props.selectedMatch.number : "No match selected"
+        const matchLabel = this.props.selectedMatch ? this.props.selectedMatch.number : "No match selected";
         return (
             <div>
                 <span className="pull-left">

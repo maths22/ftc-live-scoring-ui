@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Link, Route} from "react-router-dom";
+import {BrowserRouter, Link, Route} from "react-router-dom";
+import Config from "./components/panel/Config";
 
-var Config = () => {
-    return "CONFIG!!!";
-};
 
 class App extends Component {
 
   render() {
     return (
+        <BrowserRouter>
         <div>
             <div>
-                <Route path="/config" component={Config}/>
+                <Route path="/config" component={Confizg}/>
             </div>
         </div>
+        </BrowserRouter>
     );
   }
 }
