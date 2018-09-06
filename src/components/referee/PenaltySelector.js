@@ -22,14 +22,14 @@ class PenaltySelector extends Component<PenaltyProps> {
                     <Col xs={6} style={{'marginTop' : '1em'}}>
                         <span>Minor: </span>
                         <Counter
-                            onChange={(p) => this.props.state.minor = p}
+                            onChange={(p) => this.props.state.set('minor', p)}
                             value={this.props.state.minor}
                         />
                     </Col>
                     <Col xs={6} style={{'marginTop' : '1em'}}>
                         <span>Major: </span>
                         <Counter
-                            onChange={(p) => this.props.state.major = p}
+                            onChange={(p) => this.props.state.set('major', p)}
                             value={this.props.state.majort}
                         />
                     </Col>

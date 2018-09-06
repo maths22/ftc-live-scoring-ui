@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import {ButtonGroup, Button, Panel, Alert} from "react-bootstrap";
+import {ButtonGroup, Button, Panel, Alert, FormControl} from "react-bootstrap";
 import {defaults} from "lodash";
 import type {GlobalPanelsConfig} from "../../data/Config";
 import {PanelConfig} from "../../data/Config";
@@ -18,9 +18,6 @@ type ConfigProps = {
 
 @observer
 class Config extends Component<ConfigProps> {
-    static defaultProps = {
-      globalConfig: {},
-    };
 
     render() {
         return [
@@ -51,6 +48,32 @@ class Config extends Component<ConfigProps> {
                 { this.props.globalConfig.tabletCount ? <Alert bsStyle="warning">
                   <strong>Warning!</strong> Make sure to update all tablet roles after changing the number of tablets per field!
                 </Alert> : null}
+            </div>
+
+            <div>
+              <span className={"form-inline counter"}>
+              <span>Host: </span>
+              <FormControl
+                  inline
+                  type="text"
+                  value={this.props.globalConfig.scoringHost}
+                  onChange={(e) => this.props.globalConfig.scoringHost = e.target.value}
+              />
+
+              <Button onClick={() => this.props.globalConfig.setScoringHost(this.props.globalConfig.scoringHost)}>Save</Button>
+              </span>
+            </div>
+
+            <div>
+              <span>Division: </span>
+              <ButtonGroup className="btnGrpClass">
+                <Button active={this.props.globalConfig.division === 0}
+                        onClick={() => this.props.globalConfig.setDivision(0)}>0</Button>
+                <Button active={this.props.globalConfig.division === 1}
+                        onClick={() => this.props.globalConfig.setDivision(1)}>1</Button>
+                <Button active={this.props.globalConfig.division === 2}
+                        onClick={() => this.props.globalConfig.setDivision(2)}>2</Button>
+              </ButtonGroup>
             </div>
             </Panel.Body>
           </Panel>,

@@ -9,7 +9,8 @@ import { observer } from "mobx-react";
 import {RRTeleopScore} from "../../data/RRScore";
 
 type TeleopProps = {
-    state: RRTeleopScore
+    state: RRTeleopScore,
+    disabled: boolean
 };
 
 @observer
@@ -22,22 +23,25 @@ class TeleopSelector extends Component<TeleopProps> {
                     <Col xs={4} style={{'marginTop' : '1em'}}>
                         <span>Cryptobox 1:</span>
                         <CryptoboxSelector
-                            onChange={(p) => this.props.state.cryptobox1State = p}
+                            onChange={(p) => this.props.state.set('cryptobox1State', p)}
                             state={this.props.state.cryptobox1State || undefined}
+                            disabled={this.props.disabled}
                         />
                     </Col>
                     <Col xs={4} style={{'marginTop' : '1em'}}>
                         <span>Cryptobox 2:</span>
                         <CryptoboxSelector
-                            onChange={(p) => this.props.state.cryptobox2State = p}
+                            onChange={(p) => this.props.state.set('cryptobox2State', p)}
                             state={this.props.state.cryptobox2State || undefined}
+                            disabled={this.props.disabled}
                         />
                     </Col>
                     <Col xs={4} style={{'marginTop' : '1em'}}>
                         <span>Cryptobox 3:</span>
                         <CryptoboxSelector
-                          onChange={(p) => this.props.state.cryptobox3State = p}
+                          onChange={(p) => this.props.state.set('cryptobox3State', p)}
                           state={this.props.state.cryptobox3State || undefined}
+                          disabled={this.props.disabled}
                         />
                     </Col>
                 </Row>

@@ -9,6 +9,7 @@ import {observer} from 'mobx-react'
 
 type TeamProps = {
   state: Team,
+  showPresent: boolean
 };
 
 @observer
@@ -19,26 +20,35 @@ class TeamInfo extends Component<TeamProps> {
     return (
       <Grid fluid>
         <Row>
-          <Col xs={5} style={{'marginTop' : '1em'}}>
+          <Col xs={this.props.showPresent ? 3: 5} style={{'marginTop' : '1em'}}>
             <span>{this.props.state.number}</span>
           </Col>
+          {this.props.showPresent ?
+              <Col xs={2} style={{'marginTop' : '1em'}}>
+                <Checkbox
+                    onChange={(p) => {this.props.state.set('participating', p.target.checked)}}
+                    checked={this.props.state.participating}
+                    inline
+                >Present</Checkbox>
+              </Col>
+          : null}
           <Col xs={3} style={{'marginTop' : '1em'}}>
             <Checkbox
-              onChange={(p) => {this.props.state.noShow = p.target.checked}}
+              onChange={(p) => {this.props.state.set('noShow', p.target.checked)}}
               checked={this.props.state.noShow}
               inline
             >No show</Checkbox>
           </Col>
           <Col xs={2} style={{'marginTop' : '1em'}}>
             <Checkbox
-              onChange={(p) => this.props.state.yellowCard = p.target.checked}
+              onChange={(p) => this.props.state.set('yellowCard', p.target.checked)}
               checked={this.props.state.yellowCard}
               inline
             >Yellow</Checkbox>
           </Col>
           <Col xs={2} style={{'marginTop' : '1em'}}>
             <Checkbox
-              onChange={(p) => this.props.state.redCard = p.target.checked}
+              onChange={(p) => this.props.state.set('redCard', p.target.checked)}
               checked={this.props.state.redCard}
               inline
             >Red</Checkbox>

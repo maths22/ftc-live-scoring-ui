@@ -1,6 +1,20 @@
+import generate from "shortid";
+
 export default class Api {
+  constructor () {
+    this.clientId = window.localStorage.getItem("clientId");
+    if(!this.clientId) {
+      this.clientId = generate();
+      window.localStorage.setItem("clientId", this.clientId);
+    }
+  }
+
   getRequest(path, fn) {
-    fetch('/api/' + path)
+    fetch('/api/' + path, {
+      headers: {
+        "Client-Id": this.clientId
+      },
+    })
       .then(function(response) {
         return response.json();
       })
@@ -13,6 +27,7 @@ export default class Api {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json; charset=utf-8",
+        "Client-Id": this.clientId
       },
     })
       .then(function(response) {
@@ -46,7 +61,7 @@ export default class Api {
   }
 
   saveRandom(id, field, number, fn) {
-    this.postRequest(`/match/${id}/random`, {field, number}, fn)
+    this.postRequest(`/match/${id}/random`, {field: field, random: number}, fn)
   }
 
   saveAuto(id, alliance, data, fn) {
@@ -61,11 +76,27 @@ export default class Api {
     this.postRequest(`/match/${id}/endgame`, {alliance, data}, fn)
   }
 
-  savePenalties(id, alliance, penalties, allianceData, fn) {
-    this.postRequest(`/match/${id}/penalties`, {alliance, data: {penalties, alliance: allianceData}}, fn)
+  savePenalties(id, alliance, data, fn) {
+    this.postRequest(`/match/${id}/penalties`, {alliance, data}, fn)
+  }
+
+  saveAlliance(id, alliance, data, fn) {
+    this.postRequest(`/match/${id}/alliance`, {alliance, data}, fn)
   }
 
   submit(id, data, fn) {
     this.postRequest(`/match/${id}/submit`, data, fn)
+  }
+
+  configurePrinter(fn) {
+    this.postRequest(`/config/printer`, {}, fn)
+  }
+
+  reset(fn) {
+    this.postRequest(`/config/reset`, {}, fn)
+  }
+
+  resetMatch(id, fn) {
+    this.postRequest(`/match/${id}/reset`, {}, fn)
   }
 }

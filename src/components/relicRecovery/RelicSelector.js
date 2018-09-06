@@ -12,8 +12,9 @@ export type RelicState = {
 }
 
 type RelicProps = {
-    state: RelicState,
-    onChange: (RelicState) => void,
+  state: RelicState,
+  onChange: (RelicState) => void,
+  disabled: boolean
 };
 
 class RelicSelector extends Component<RelicProps> {
@@ -33,14 +34,14 @@ class RelicSelector extends Component<RelicProps> {
     };
 
     render() {
-        const disableOrientation = !this.props.state.position || this.props.state.position === "none";
+        const disableOrientation = this.props.disabled || !this.props.state.position || this.props.state.position === "none";
         return (
             <span>
                 <ButtonGroup>
-                    <Button active={this.props.state.position === "none"} onClick={() => this.setPosition("none")}>None</Button>
-                    <Button active={this.props.state.position === "zone1"} onClick={() => this.setPosition("zone1")}>Zone 1</Button>
-                    <Button active={this.props.state.position === "zone2"} onClick={() => this.setPosition("zone2")}>Zone 2</Button>
-                    <Button active={this.props.state.position === "zone3"} onClick={() => this.setPosition("zone3")}>Zone 3</Button>
+                    <Button disabled={this.props.disabled} active={this.props.state.position === "none"} onClick={() => this.setPosition("none")}>None</Button>
+                    <Button disabled={this.props.disabled} active={this.props.state.position === "zone1"} onClick={() => this.setPosition("zone1")}>Zone 1</Button>
+                    <Button disabled={this.props.disabled} active={this.props.state.position === "zone2"} onClick={() => this.setPosition("zone2")}>Zone 2</Button>
+                    <Button disabled={this.props.disabled} active={this.props.state.position === "zone3"} onClick={() => this.setPosition("zone3")}>Zone 3</Button>
                 </ButtonGroup>
                 <ButtonGroup style={{'marginLeft': '0.5em'}}>
                     <Button
