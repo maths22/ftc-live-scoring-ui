@@ -4,12 +4,9 @@ import React, { Component } from 'react';
 import {Grid, Row, Col, Tabs, TabPane, Tab} from "react-bootstrap";
 import defaults from "lodash/defaults";
 import Counter from "../../widgets/Counter";
-import type {Alliance, Match} from "../../types/Match";
-import type {ConfigState} from "../../modules/config";
-import AutoSelector from "../relicRecovery/AutoSelector";
-import type {RRAutoScore} from "../../types/RRScore";
-import TeleopSelector from "../relicRecovery/TeleopSelector";
-import EndgameSelector from "../relicRecovery/EndgameSelector";
+import AutoSelector from "../roverRuckus/AutoSelector";
+import TeleopSelector from "../roverRuckus/TeleopSelector";
+import EndgameSelector from "../roverRuckus/EndgameSelector";
 import PenaltySelector from "../referee/PenaltySelector";
 import TeamInfo from "../referee/TeamInfo";
 

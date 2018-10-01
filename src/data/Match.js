@@ -1,7 +1,7 @@
 //@flow
 
-import {autorun, observable, reaction, toJS} from "mobx";
-import {RRScore} from "./RRScore";
+import {observable} from "mobx";
+import {Score} from "./RoverRuckusScore";
 
 import type {IObservableArray} from 'mobx';
 
@@ -31,7 +31,7 @@ export class Team {
     api.saveAlliance(this[_match], this[_allianceColor], this[_alliance]);
   }
 
-  init({ number, noShow, yellowCard, redCard, participating}) {
+  init({number, noShow, yellowCard, redCard, participating}) {
     this.number = number;
     this.noShow = noShow;
     this.yellowCard = yellowCard;
@@ -51,19 +51,19 @@ export class Match {
   @observable redAlliance: Alliance = [];
   @observable blueAlliance: Alliance = [];
   @observable random: number;
-  @observable redScore: RRScore;
-  @observable blueScore: RRScore;
+  @observable redScore: Score;
+  @observable blueScore: Score;
 
 
-  init ({ number, started, field, redAlliance, blueAlliance, random, redScore, blueScore}) {
+  init({number, started, field, redAlliance, blueAlliance, random, redScore, blueScore}) {
     this.number = number;
     this.started = started;
     this.field = field;
     this.redAlliance.replace(redAlliance.map((t) => new Team(number, "red", this.redAlliance).init(t)));
     this.blueAlliance.replace(blueAlliance.map((t) => new Team(number, "blue", this.blueAlliance).init(t)));
     this.random = random;
-    this.redScore = new RRScore(number, "red").init(redScore);
-    this.blueScore = new RRScore(number, "blue").init(blueScore);
+    this.redScore = new Score(number, "red").init(redScore);
+    this.blueScore = new Score(number, "blue").init(blueScore);
 
     return this;
   }

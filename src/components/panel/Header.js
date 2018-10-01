@@ -5,7 +5,7 @@ import {Grid, Row, Col, Button, FormControl} from "react-bootstrap";
 import defaults from "lodash/defaults";
 import Counter from "../../widgets/Counter";
 import RolesUtil from "../../utils/RolesUtil";
-import type {PanelRole, PanelsConfig} from "../../data/Config";
+import type {PanelRole, PanelConfig} from "../../data/Config";
 
 type Match = {
     number: String,
@@ -15,7 +15,7 @@ type HeaderProps = {
     matchList: Match[],
     selectedMatch: ?Match,
     role: PanelRole,
-    config: PanelsConfig,
+    config: PanelConfig,
     onSelect: (Match) => void,
 };
 

@@ -26,7 +26,9 @@ class TeamInfo extends Component<TeamProps> {
           {this.props.showPresent ?
               <Col xs={2} style={{'marginTop' : '1em'}}>
                 <Checkbox
-                    onChange={(p) => {this.props.state.set('participating', p.target.checked)}}
+                    onChange={(p) => {
+                      this.props.state.set('participating', p.target.checked)
+                    }}
                     checked={this.props.state.participating}
                     inline
                 >Present</Checkbox>

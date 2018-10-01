@@ -9,23 +9,23 @@ export type PanelField = 1 | 2 | 3 | 0;
 const api = new Api();
 
 export class PanelConfig {
-    @observable role: PanelRole = null;
-    @observable field: PanelField = 0;
+  @observable role: PanelRole = null;
+  @observable field: PanelField = 0;
 
-    constructor () {
-        this.role = window.localStorage.getItem("role");
-        this.field = parseInt(window.localStorage.getItem("field"));
-    }
+  constructor() {
+    this.role = window.localStorage.getItem("role");
+    this.field = parseInt(window.localStorage.getItem("field"));
+  }
 
-    setRole (newRole: PanelRole) {
-        this.role = newRole;
-        window.localStorage.setItem("role", newRole);
-    }
+  setRole(newRole: PanelRole) {
+    this.role = newRole;
+    window.localStorage.setItem("role", newRole);
+  }
 
-    setField (newField: PanelField) {
-        this.field = newField;
-        window.localStorage.setItem("field", newField);
-    }
+  setField(newField: PanelField) {
+    this.field = newField;
+    window.localStorage.setItem("field", newField);
+  }
 }
 
 export class GlobalPanelsConfig {
@@ -35,13 +35,13 @@ export class GlobalPanelsConfig {
   @observable scoringHost: string | null = null;
 
   processUpdates = (res) => {
-    if(res["FIELD_COUNT"]) this.fieldCount = res["FIELD_COUNT"];
-    if(res["DEVICE_COUNT"]) this.tabletCount = res["DEVICE_COUNT"];
-    if(res["SCORING_SYSTEM_HOST"]) this.scoringHost = res["SCORING_SYSTEM_HOST"];
-    if(res["SCORING_SYSTEM_DIVISION"]) this.division = res["SCORING_SYSTEM_DIVISION"];
+    if (res["FIELD_COUNT"]) this.fieldCount = res["FIELD_COUNT"];
+    if (res["DEVICE_COUNT"]) this.tabletCount = res["DEVICE_COUNT"];
+    if (res["SCORING_SYSTEM_HOST"]) this.scoringHost = res["SCORING_SYSTEM_HOST"];
+    if (res["SCORING_SYSTEM_DIVISION"]) this.division = res["SCORING_SYSTEM_DIVISION"];
   };
 
-  constructor () {
+  constructor() {
     api.getFieldConfig(0, this.processUpdates)
   }
 

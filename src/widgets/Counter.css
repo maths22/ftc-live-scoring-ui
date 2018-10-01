@@ -11,3 +11,7 @@
 .counter > .btnGrpClass {
     margin-left: 0.5em;
 }
+
+.counter.large button {
+    padding: 1em 2em;
+}

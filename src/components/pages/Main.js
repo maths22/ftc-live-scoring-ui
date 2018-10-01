@@ -12,8 +12,8 @@ import {Link, Redirect} from "react-router-dom";
 import Api from "../../api";
 import {State} from "../../data/State";
 import MatchScore from "../panel/MatchScore";
-import RandomizationSelector from "../relicRecovery/RandomizationSelector";
-import RandomizationResults from "../relicRecovery/RandomizationResults";
+import RandomizationSelector from "../roverRuckus/RandomizationSelector";
+import RandomizationResults from "../roverRuckus/RandomizationResults";
 
 type ConfigProps = {
   globalConfig: GlobalPanelsConfig,
